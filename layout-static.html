@@ -6,12 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <title>Static Navigation - SB Admin</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class="sb-nav-fixed">
+    <body>
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
@@ -110,136 +109,25 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Static Navigation</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Static Navigation</li>
                         </ol>
-                        <div class="row">
-                            <!-- Indicadores -->
-        <section class="p-4 text-right bg-light">
-            <h4 id="indicadores" class="mb-3">
-                Indicadores 
-            </h4>
-            <h6 class="mb-3">YYYY-MM-DD</h6>
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-3 g-3 mt-2">
-                    <div class="col">
-                        <div class="card">
+                        <div class="card mb-4">
                             <div class="card-body">
-                                <h5 class="card-title">Precipitación</h5>
-                                <p class="card-text">
-                                    <ul class="list-group list-group-light">
-                                        <li id="precipitacionMinValue" class="list-group-item">Min 0.0 [mm]</li>
-                                        <li id="precipitacionPromValue" class="list-group-item">Prom 0.0 [mm]</li>
-                                        <li id="precipitacionMaxValue" class="list-group-item">Max 0.0 [mm]</li>
-                                      </ul>  
+                                <p class="mb-0">
+                                    This page is an example of using static navigation. By removing the
+                                    <code>.sb-nav-fixed</code>
+                                    class from the
+                                    <code>body</code>
+                                    , the top navigation and side navigation will become static on scroll. Scroll down this page to see an example.
                                 </p>
                             </div>
                         </div>
+                        <div style="height: 100vh"></div>
+                        <div class="card mb-4"><div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div></div>
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Uv</h5>
-                                <p class="card-text">
-                                    <ul class="list-group list-group-light">
-                                        <li id="uvMinValue" class="list-group-item">Min 0.0 [--]</li>
-                                        <li id="uvPromValue" class="list-group-item">Prom 0.0 [--]</li>
-                                        <li id="uvMaxValue" class="list-group-item">Max 0.0 [--]</li>
-                                      </ul>  
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Temperatura</h5>
-                                <p class="card-text">
-                                    <ul class="list-group list-group-light">
-                                        <li id="temperaturaMinValue" class="list-group-item">Min 0.0 [°C]</li>
-                                        <li id="temperaturaPromValue" class="list-group-item">Prom 0.0 [°C]</li>
-                                        <li id="temperaturaMaxValue" class="list-group-item">Max 0.0 [°C]</li>
-                                      </ul>  
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Indicadores -->
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        Area Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="plot1" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Bar Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="plot2" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                        </div>
-                        <section class="p-4 text-right bg-light">
-                            <h4 id="datos" class="mb-3">
-                                Datos
-                            </h4>
-                            <div class="container">
-                
-                                <div
-                                    class="row justify-content-end row-cols-6 row-cols-md-6 g-3 mt-2">
-                
-                                    <div class="col">
-                                        <select class="form-select form-select-lg mb-3"
-                                            aria-label="Default select example">
-                                            <option selected>Ciudades</option>
-                                            <option value="Machala">Machala</option>
-                                            <option value="Guayaquil">Guayaquil</option>
-                                            <option value="Quito">Quito</option>
-                                        </select>
-                                    </div>
-                
-                                </div>
-                                <div class="row row-cols-1 row-cols-md-1 g-3 mt-2">
-                                    <div class="col">
-                
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Pronóstico del tiempo
-                                                    para 5 días con datos cada 3 horas por
-                                                    ciudad</h5>
-                                                <table id="forecast"
-                                                    class="table align-middle mb-0 bg-white">
-                                                    <thead class="bg-light">
-                                                        <tr>
-                                                            <th>Hora</th>
-                                                            <th>Humedad [%]</th>
-                                                            <th>Velocidad del viento [m/s]</th>
-                                                            <th>Precipitación [--]</th>
-                                                            <th>Presión [hPa]</th>
-                                                            <th>Nubosidad [%]</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="forecastbody">
-                
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
@@ -257,12 +145,5 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
-        <script type="module" src="js/static_data.js"></script>
-        <script type="module" src="js/load_data.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
     </body>
 </html>
