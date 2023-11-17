@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>GuayaClime</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Gentium+Book+Plus&family=Roboto:wght@300;500&family=Satisfy&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3 gentium" href="index.html">GuayaClime <img src="/images/clima.png" alt="Logo" class="logo"></a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 text-light bg-terceary" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+                    aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
+                        class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fas fa-user fa-fw text-light"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Configuración</a></li>
+                    <li><a class="dropdown-item" href="#!">Registro</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Salir</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu bg-terceary">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading gentium text-light">Inicio</div>
+
+                        <a class="nav-link collapsed text-light" href="index.html" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon text-semilight"><svg class="svg-inline--fa fa-table-columns"
+                                    aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table-columns"
+                                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                    data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm64 64V416H224V160H64zm384 0H288V416H448V160z">
+                                    </path>
+                                </svg><!-- <i class="fas fa-columns"></i> Font Awesome fontawesome.com --></div>
+                            Dashboard
+                            <div class="sb-sidenav-collapse-arrow text-semilight"><svg class="svg-inline--fa fa-angle-down"
+                                    aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down"
+                                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
+                                    data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
+                                    </path>
+                                </svg><!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com --></div>
+                        </a>
+                        <div class="collapse show" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion" style="">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link text-semilight" href="#indicadores">Indicadores</a>
+                                <a class="nav-link text-semilight" href="#graficas">Gráficas</a>
+                                <a class="nav-link text-semilight" href="#tablas">Tablas </a>
+                            </nav>
+                        </div>
+
+                        <div class="sb-sidenav-menu-heading gentium text-light">Complementos</div>
+                        <a class="nav-link text-semilight" href="tables.html">
+                            <div class="sb-nav-link-icon text-light"><i class="fas fa-table titulo text-light"></i></div>
+                            Tablas
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer bg-primary">
+                    <div class="small titulo text-semilight">Inicio de sesión como:</div>
+                    <div class="titulo text-light">Admin</div>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4 gentium">Dashboard</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active titulo">Resumen General</li>
+                    </ol>
+                    <div class="row">
+                        <!-- Indicadores -->
+                        <section class="p-4 text-right bg-light">
+                            <h4 id="indicadores" class="mb-3 titulo">
+                                Indicadores
+                            </h4>
+                            <h5 class="mb-3 titulo">YYYY-MM-DD</h5>
+                            <div class="container">
+                                <div class="row row-cols-1 row-cols-md-3 g-3 mt-2">
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body bg-primary rounded-2">
+                                                <h5 class="card-title titulo">Precipitación <img src="/images/lluvia.png" alt="Lluvia" class="imagenes"></h5>
+                                                <p class="card-text">
+                                                <ul class="list-group list-group-light">
+                                                    <li id="precipitacionMinValue"
+                                                        class="list-group-item bg-secondary parrafos">
+                                                        Min 0.0 [mm]</li>
+                                                    <li id="precipitacionPromValue"
+                                                        class="list-group-item bg-secondary parrafos">Prom 0.0 [mm]</li>
+                                                    <li id="precipitacionMaxValue"
+                                                        class="list-group-item bg-secondary parrafos">
+                                                        Max 0.0 [mm]</li>
+                                                </ul>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body bg-primary rounded-2">
+                                                <h5 class="card-title titulo">UV <img src="/images/uv.png" alt="UV" class="imagenes-2"></h5>
+                                                <p class="card-text">
+                                                <ul class="list-group list-group-light">
+                                                    <li id="uvMinValue" class="list-group-item bg-secondary parrafos">
+                                                        Min 0.0
+                                                        [--]</li>
+                                                    <li id="uvPromValue" class="list-group-item bg-secondary parrafos">
+                                                        Prom 0.0
+                                                        [--]</li>
+                                                    <li id="uvMaxValue" class="list-group-item bg-secondary parrafos">
+                                                        Max 0.0
+                                                        [--]</li>
+                                                </ul>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body bg-primary rounded-2">
+                                                <h5 class="card-title titulo">Temperatura <img src="/images/temperatura2.png" alt="Temperatura" class="imagenes"></h5>
+                                                <p class="card-text">
+                                                <ul class="list-group list-group-light">
+                                                    <li id="temperaturaMinValue"
+                                                        class="list-group-item bg-secondary parrafos">
+                                                        Min 0.0 [°C]</li>
+                                                    <li id="temperaturaPromValue"
+                                                        class="list-group-item bg-secondary parrafos">
+                                                        Prom 0.0 [°C]</li>
+                                                    <li id="temperaturaMaxValue"
+                                                        class="list-group-item bg-secondary parrafos">
+                                                        Max 0.0 [°C]</li>
+                                                </ul>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Indicadores -->
+                    </div>
+                    <h4 id="graficas" class="mb-3 titulo">
+                        Gráficos
+                    </h4>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
+                                <div class="card-header titulo">
+                                    <img src="/images/temperatura.png" alt="Temperatura" class="imagenes">
+                                    Temperatura cada 2 horas
+
+                                </div>
+                                <div class="card-body"><canvas id="plot1" width="100%" height="40"></canvas></div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
+                                <div class="card-header titulo">
+                                    <img src="/images/lluvia.png" alt="Lluvia" class="imagenes">
+                                    Probabilidad de lluvia cada 2 horas
+                                </div>
+                                <div class="card-body"><canvas id="plot2" width="100%" height="40"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 id="tablas" class="mb-3 titulo">
+                        Tablas
+                    </h4>
+                    <section class="p-4 text-right bg-light border rounded-2">
+                        <div class="container">
+                            <div class="row justify-content-end row-cols-4 row-cols-md-2 g-3 mt-2">
+                                <h5 class="card-title gentium">
+                                    Pronóstico del tiempo
+                                    para 5 días con datos cada 3 horas por
+                                    ciudad
+                                </h5>
+                                <div class="col">
+                                    <select class="form-select form-select-lg mb-3 titulo"
+                                        aria-label="Default select example">
+                                        <option selected>Ciudades</option>
+                                        <option value="Machala">Machala</option>
+                                        <option value="Guayaquil">Guayaquil</option>
+                                        <option value="Quito">Quito</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row row-cols-1 row-cols-md-1 g-3 mt-2">
+                                <div class="col">
+
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <table id="forecast" class="table align-middle mb-0 bg-white">
+                                                <thead class="bg-light">
+                                                    <tr>
+                                                        <th class="titulo">Hora</th>
+                                                        <th class="titulo">Humedad [%]</th>
+                                                        <th class="titulo">Velocidad del viento [m/s]</th>
+                                                        <th class="titulo">Precipitación [--]</th>
+                                                        <th class="titulo">Presión [hPa]</th>
+                                                        <th class="titulo">Nubosidad [%]</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="forecastbody">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Tabla de mareas -->
+                    <section class="p-4 text-right bg-light">
+                        <h4 class="mb-3 gentium">
+                            Mapa de monitoreo de amenaza de inundaciones bajo pronóstico de precipitaciones
+                        </h4>
+                        <div class="container">
+                            <div class="row row-cols-1 row-cols-md-1 g-3 mt-2">
+                                <div class="col">
+                                    <div class="card">
+                                        <div id="monitoreo" class="card-body gentium">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Tabla de mareas -->
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; GuayaClime 2023</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+    <script type="module" src="js/static_data.js"></script>
+    <script type="module" src="js/load_data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+</body>
+
+</html>
