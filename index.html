@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta name="description" content="Tablas de GuayaClime" />
+    <meta name="author" content="Jose Ramos" />
     <title>GuayaClime</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
@@ -14,15 +14,13 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Gentium+Book+Plus&family=Roboto:wght@300;500&family=Satisfy&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Gentium+Book+Plus&family=Roboto:wght@300;500&family=Satisfy&display=swap" rel="stylesheet">
 </head>
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3 gentium" href="index.html">GuayaClime <img src="/images/clima.png" alt="Logo" class="logo"></a>
+        <a class="navbar-brand ps-3 gentium" href="index.html">GuayaClime <img src="images/clima.png" alt="Logo" class="logo"></a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 text-light bg-terceary" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
@@ -187,7 +185,7 @@
                         <div class="col-xl-6">
                             <div class="card mb-4">
                                 <div class="card-header titulo">
-                                    <img src="/images/temperatura.png" alt="Temperatura" class="imagenes">
+                                    <img src="images/temperatura.png" alt="Temperatura" class="imagenes">
                                     Temperatura cada 2 horas
 
                                 </div>
@@ -197,7 +195,7 @@
                         <div class="col-xl-6">
                             <div class="card mb-4">
                                 <div class="card-header titulo">
-                                    <img src="/images/lluvia.png" alt="Lluvia" class="imagenes">
+                                    <img src="images/lluvia.png" alt="Lluvia" class="imagenes">
                                     Probabilidad de lluvia cada 2 horas
                                 </div>
                                 <div class="card-body"><canvas id="plot2" width="100%" height="40"></canvas></div>
@@ -236,12 +234,12 @@
                                             <table id="forecast" class="table align-middle mb-0 bg-white">
                                                 <thead class="bg-light">
                                                     <tr>
-                                                        <th class="titulo">Hora</th>
-                                                        <th class="titulo">Humedad [%]</th>
-                                                        <th class="titulo">Velocidad del viento [m/s]</th>
-                                                        <th class="titulo">Precipitación [--]</th>
-                                                        <th class="titulo">Presión [hPa]</th>
-                                                        <th class="titulo">Nubosidad [%]</th>
+                                                        <th class="titulo">Hora<img src="images/tiempo.png" class="imagenes mx-1"></th>
+                                                        <th class="titulo">Humedad [%]<img src="images/humedad.png" class="imagenes mx-1"></th>
+                                                        <th class="titulo">Velocidad del viento [m/s]<img src="images/viento.png" class="imagenes mx-1"></th>
+                                                        <th class="titulo">Precipitación [--]<img src="images/lluvia.png" class="imagenes mx-1"></th>
+                                                        <th class="titulo">Presión [hPa]<img src="images/presion.png" class="imagenes mx-1"></th>
+                                                        <th class="titulo">Nubosidad [%]<img src="images/nubosidad.png" class="imagenes mx-1"></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="forecastbody">
@@ -296,8 +294,7 @@
     <script src="js/datatables-simple-demo.js"></script>
     <script type="module" src="js/static_data.js"></script>
     <script type="module" src="js/load_data.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+    
 </body>
 
 </html>
