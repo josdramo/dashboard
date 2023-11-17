@@ -1,7 +1,7 @@
 import {tiempoArr, precipitacionArr, uvArr, temperaturaArr} from './static_data.js';
 
 let fechaActual = () => new Date().toISOString().slice(0,10);
-
+console.log(fechaActual)
 
 let cargarPrecipitacion = () => {
 
@@ -35,23 +35,87 @@ let cargarPrecipitacion = () => {
     precipitacionMaxValue.textContent = `Max ${max} [mm]`
 }
 
+let cargarUV = () => {
+
+  //Obtenga la función fechaActual
+  let actual = fechaActual();
+  //Defina un arreglo temporal vacío
+  let datos  = [];
+  /*Itere en el arreglo tiempoArr para filtrar los valores de 
+  precipitacionArr que sean igual con la fecha actual*/
+  for (let index = 0; index < tiempoArr.length; index++) {
+      const tiempo = tiempoArr[index];
+      const UV = uvArr[index]
+  
+      if(tiempo.includes(actual)) {
+        datos.push(UV)
+      }
+    }
+  //Con los valores filtrados, obtenga los valores máximo, promedio y mínimo
+  let max = Math.max(...datos) //Extender elementos de los arreglos las desempaqueta a cada elemento
+  let min = Math.min(...datos)
+  let sum = datos.reduce((a, b) => a + b, 0); // Hace callback, el primer argumento es un acumulador y el segundo el valor
+  let prom = (sum / datos.length) || 0; // si abajo es 0 se utiliza el 0
+
+  //Obtenga la referencia a los elementos HTML con id precipitacionMinValue, precipitacionPromValue y precipitacionMaxValue
+  let UVnMinValue = document.getElementById("uvMinValue")
+  let UVPromValue = document.getElementById("uvPromValue")
+  let UVMaxValue = document.getElementById("uvMaxValue")
+  //Actualice los elementos HTML con los valores correspondientes
+  UVnMinValue.textContent = `Min ${min} [mm]`
+  UVPromValue.textContent = `Prom ${ Math.round(prom * 100) / 100 } [mm]`
+  UVMaxValue.textContent = `Max ${max} [mm]`
+}
+
+let cargarTemperatura = () => {
+
+  //Obtenga la función fechaActual
+  let actual = fechaActual();
+  //Defina un arreglo temporal vacío
+  let datos  = [];
+  /*Itere en el arreglo tiempoArr para filtrar los valores de 
+  precipitacionArr que sean igual con la fecha actual*/
+  for (let index = 0; index < tiempoArr.length; index++) {
+      const tiempo = tiempoArr[index];
+      const temperatura = temperaturaArr[index]
+  
+      if(tiempo.includes(actual)) {
+        datos.push(temperatura)
+      }
+    }
+  //Con los valores filtrados, obtenga los valores máximo, promedio y mínimo
+  let max = Math.max(...datos) //Extender elementos de los arreglos las desempaqueta a cada elemento
+  let min = Math.min(...datos)
+  let sum = datos.reduce((a, b) => a + b, 0); // Hace callback, el primer argumento es un acumulador y el segundo el valor
+  let prom = (sum / datos.length) || 0; // si abajo es 0 se utiliza el 0
+
+  //Obtenga la referencia a los elementos HTML con id precipitacionMinValue, precipitacionPromValue y precipitacionMaxValue
+  let temperaturanMinValue = document.getElementById("temperaturaMinValue")
+  let temperaturaPromValue = document.getElementById("temperaturaPromValue")
+  let temperaturaMaxValue = document.getElementById("temperaturaMaxValue")
+  //Actualice los elementos HTML con los valores correspondientes
+  temperaturanMinValue.textContent = `Min ${min} [mm]`
+  temperaturaPromValue.textContent = `Prom ${ Math.round(prom * 100) / 100 } [mm]`
+  temperaturaMaxValue.textContent = `Max ${max} [mm]`
+}
+
 
 
 let cargarFechaActual = () => {
   
     //Obtenga la referencia al elemento h6
-    let coleccionHTML = document.getElementsByTagName("h6")
+    let coleccionHTML = document.getElementsByTagName("h5")
 
-    let tituloH6 = coleccionHTML[0]
+    let tituloH5 = coleccionHTML[0]
     //Actualice la referencia al elemento h6 con el valor de la función fechaActual()
-    tituloH6.textContent = fechaActual()
+    tituloH5.textContent = fechaActual()
   }
 
 
 let cargarOpenMeteo = () => {
 
   //URL que responde con la respuesta a cargar
-  let URL = 'https://api.open-meteo.com/v1/forecast?latitude=-2.1962&longitude=-79.8862&hourly=temperature_2m,precipitation_probability&timezone=auto'; 
+  let URL = 'https://api.open-meteo.com/v1/forecast?latitude=-2.1962&longitude=-79.8862&hourly=temperature_2m&timezone=auto&forecast_days=1'; 
 
   fetch( URL )
     .then(responseText => responseText.json())
@@ -69,7 +133,6 @@ let cargarOpenMeteo = () => {
 
       //Etiquetas de los datos
       let data = responseJSON.hourly.temperature_2m;
-      let data2 = responseJSON.hourly.precipitation_probability;
 
       //Objeto de configuración del gráfico
       let config = {
@@ -80,12 +143,6 @@ let cargarOpenMeteo = () => {
             {
               label: 'Temperature [2m]',
               data: data, 
-            },
-            {
-              label: 'Probabilidad de lluvia',
-              data: data2,
-              borderColor: 'rgb(255, 99, 132)'
-              
             }
         ],
       },
@@ -250,7 +307,6 @@ let loadForecastByCity = () => {
   let selectElement = document.querySelector("select")
   selectElement.addEventListener("change", selectListener)
 
-
 }
 
 let loadExternalTable = async () => {
@@ -276,10 +332,14 @@ let loadExternalTable = async () => {
     console.log(error)
   }
 }
- 
+
+
 loadExternalTable();
 loadForecastByCity();
 cargarOpenMeteo();
 cargarOpenMeteo2();
 cargarPrecipitacion();
+cargarUV();
+cargarTemperatura();
 cargarFechaActual();
+

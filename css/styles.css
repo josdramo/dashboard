@@ -34,16 +34,16 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #0d6efd;
-  --bs-secondary: #6c757d;
+  --bs-primary: #059EDC;
+  --bs-secondary: #D0F1FF;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 13, 110, 253;
-  --bs-secondary-rgb: 108, 117, 125;
+  --bs-primary-rgb: 5, 158, 220;
+  --bs-secondary-rgb: 208, 241, 255;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
@@ -599,6 +599,11 @@ progress {
 
 .img-fluid {
   max-width: 100%;
+  height: auto;
+}
+
+.max-width-1 {
+  max-width: 80%;
   height: auto;
 }
 
@@ -11240,4 +11245,21 @@ body {
   width: 20px !important;
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
+}
+
+.imagenes {
+  width: 25px;
+  height: 25px;
+}
+
+.titulo {
+  font-family: 'Roboto', sans-serif;
+}
+
+.parrafos {
+  font-family: 'Abyssinica SIL', serif;
+}
+
+.gentium {
+  font-family: 'Gentium Book Plus', serif;
 }
