@@ -143,6 +143,7 @@ let cargarOpenMeteo = () => {
             {
               label: 'Temperature [2m]',
               data: data, 
+              backgroundColor: 'rgb(252, 228, 25)'
             }
         ],
       },
@@ -202,7 +203,7 @@ let cargarOpenMeteo2 = () => {
             {
               label: 'Probabilidad de lluvia',
               data: data,
-              backgroundColor: 'rgb(255, 99, 132)'
+              backgroundColor: 'rgb(234, 123, 6)'
             }
         ],
       },
