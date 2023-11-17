@@ -36,6 +36,7 @@
   --bs-gray-900: #212529;
   --bs-primary: #059EDC;
   --bs-secondary: #D0F1FF;
+  --bs-terceary: #0073A4;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
@@ -44,6 +45,7 @@
   --bs-dark: #212529;
   --bs-primary-rgb: 5, 158, 220;
   --bs-secondary-rgb: 208, 241, 255;
+  --bs-terceary-rgb: 0, 115, 164; 
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
@@ -8156,6 +8158,11 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
 }
 
+.bg-terceary {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-terceary-rgb), var(--bs-bg-opacity)) !important;
+}
+
 .bg-success {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
@@ -11262,4 +11269,12 @@ body {
 
 .gentium {
   font-family: 'Gentium Book Plus', serif;
+}
+
+.text-light {
+  color: #FFF !important;
+}
+
+.text-semilight {
+  color: #D1D1D1 !important;
 }

@@ -14,11 +14,13 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Gentium+Book+Plus&family=Roboto:wght@300;500&family=Satisfy&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Gentium+Book+Plus&family=Roboto:wght@300;500&family=Satisfy&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3 gentium" href="index.html">GuayaClime</a>
         <!-- Sidebar Toggle-->
@@ -52,27 +54,49 @@
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                <div class="sb-sidenav-menu">
+                <div class="sb-sidenav-menu bg-terceary">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading gentium">Inicio</div>
-                        <a class="nav-link" href="index.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt titulo"></i></div>
+                        <div class="sb-sidenav-menu-heading gentium text-light">Inicio</div>
+
+                        <a class="nav-link collapsed text-light" href="index.html" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon text-semilight"><svg class="svg-inline--fa fa-table-columns"
+                                    aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table-columns"
+                                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                    data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm64 64V416H224V160H64zm384 0H288V416H448V160z">
+                                    </path>
+                                </svg><!-- <i class="fas fa-columns"></i> Font Awesome fontawesome.com --></div>
                             Dashboard
+                            <div class="sb-sidenav-collapse-arrow text-semilight"><svg class="svg-inline--fa fa-angle-down"
+                                    aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down"
+                                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
+                                    data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
+                                    </path>
+                                </svg><!-- <i class="fas fa-angle-down"></i> Font Awesome fontawesome.com --></div>
                         </a>
-                        <div class="sb-sidenav-menu-heading gentium">Complementos</div>
-                        <a class="nav-link" href="charts.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area titulo"></i></div>
-                            Gráficos
-                        </a>
-                        <a class="nav-link" href="tables.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table titulo"></i></div>
+                        <div class="collapse show" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion" style="">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link text-semilight" href="#indicadores">Indicadores</a>
+                                <a class="nav-link text-semilight" href="#graficas">Gráficas</a>
+                                <a class="nav-link text-semilight" href="#tablas">Tablas </a>
+                            </nav>
+                        </div>
+
+                        <div class="sb-sidenav-menu-heading gentium text-light">Complementos</div>
+                        <a class="nav-link text-semilight" href="tables.html">
+                            <div class="sb-nav-link-icon text-light"><i class="fas fa-table titulo"></i></div>
                             Tablas
                         </a>
                     </div>
                 </div>
-                <div class="sb-sidenav-footer">
-                    <div class="small parrafos">Logged in as:</div>
-                    Start Bootstrap
+                <div class="sb-sidenav-footer bg-primary">
+                    <div class="small titulo text-semilight">Inicio de sesión como:</div>
+                    <div class="titulo text-light">Admin</div>
                 </div>
             </nav>
         </div>
@@ -86,7 +110,7 @@
                     <div class="row">
                         <!-- Indicadores -->
                         <section class="p-4 text-right bg-light">
-                            <h4 id="indicadores titulo" class="mb-3">
+                            <h4 id="indicadores" class="mb-3 titulo">
                                 Indicadores
                             </h4>
                             <h5 class="mb-3 titulo">YYYY-MM-DD</h5>
@@ -95,14 +119,16 @@
                                     <div class="col">
                                         <div class="card">
                                             <div class="card-body bg-primary rounded-2">
-                                                <h5 class="card-title titulo">Precipitación</h5>
+                                                <h5 class="card-title titulo">Precipitación <img src="/images/lluvia.png" alt="Lluvia" class="imagenes"></h5>
                                                 <p class="card-text">
                                                 <ul class="list-group list-group-light">
-                                                    <li id="precipitacionMinValue" class="list-group-item bg-secondary parrafos">
+                                                    <li id="precipitacionMinValue"
+                                                        class="list-group-item bg-secondary parrafos">
                                                         Min 0.0 [mm]</li>
                                                     <li id="precipitacionPromValue"
                                                         class="list-group-item bg-secondary parrafos">Prom 0.0 [mm]</li>
-                                                    <li id="precipitacionMaxValue" class="list-group-item bg-secondary parrafos">
+                                                    <li id="precipitacionMaxValue"
+                                                        class="list-group-item bg-secondary parrafos">
                                                         Max 0.0 [mm]</li>
                                                 </ul>
                                                 </p>
@@ -112,14 +138,17 @@
                                     <div class="col">
                                         <div class="card">
                                             <div class="card-body bg-primary rounded-2">
-                                                <h5 class="card-title">Uv</h5>
+                                                <h5 class="card-title titulo">UV</h5>
                                                 <p class="card-text">
                                                 <ul class="list-group list-group-light">
-                                                    <li id="uvMinValue" class="list-group-item bg-secondary">Min 0.0
+                                                    <li id="uvMinValue" class="list-group-item bg-secondary parrafos">
+                                                        Min 0.0
                                                         [--]</li>
-                                                    <li id="uvPromValue" class="list-group-item bg-secondary">Prom 0.0
+                                                    <li id="uvPromValue" class="list-group-item bg-secondary parrafos">
+                                                        Prom 0.0
                                                         [--]</li>
-                                                    <li id="uvMaxValue" class="list-group-item bg-secondary">Max 0.0
+                                                    <li id="uvMaxValue" class="list-group-item bg-secondary parrafos">
+                                                        Max 0.0
                                                         [--]</li>
                                                 </ul>
                                                 </p>
@@ -129,14 +158,17 @@
                                     <div class="col">
                                         <div class="card">
                                             <div class="card-body bg-primary rounded-2">
-                                                <h5 class="card-title">Temperatura</h5>
+                                                <h5 class="card-title titulo">Temperatura</h5>
                                                 <p class="card-text">
                                                 <ul class="list-group list-group-light">
-                                                    <li id="temperaturaMinValue" class="list-group-item bg-secondary">
+                                                    <li id="temperaturaMinValue"
+                                                        class="list-group-item bg-secondary parrafos">
                                                         Min 0.0 [°C]</li>
-                                                    <li id="temperaturaPromValue" class="list-group-item bg-secondary">
+                                                    <li id="temperaturaPromValue"
+                                                        class="list-group-item bg-secondary parrafos">
                                                         Prom 0.0 [°C]</li>
-                                                    <li id="temperaturaMaxValue" class="list-group-item bg-secondary">
+                                                    <li id="temperaturaMaxValue"
+                                                        class="list-group-item bg-secondary parrafos">
                                                         Max 0.0 [°C]</li>
                                                 </ul>
                                                 </p>
@@ -148,10 +180,13 @@
                         </section>
                         <!-- Indicadores -->
                     </div>
+                    <h4 id="graficas" class="mb-3 titulo">
+                        Gráficos
+                    </h4>
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="card mb-4">
-                                <div class="card-header">
+                                <div class="card-header titulo">
                                     <img src="/images/temperatura.png" alt="Temperatura" class="imagenes">
                                     Temperatura cada 2 horas
 
@@ -161,7 +196,7 @@
                         </div>
                         <div class="col-xl-6">
                             <div class="card mb-4">
-                                <div class="card-header">
+                                <div class="card-header titulo">
                                     <img src="/images/lluvia.png" alt="Lluvia" class="imagenes">
                                     Probabilidad de lluvia cada 2 horas
                                 </div>
@@ -169,16 +204,20 @@
                             </div>
                         </div>
                     </div>
+                    <h4 id="tablas" class="mb-3 titulo">
+                        Tablas
+                    </h4>
                     <section class="p-4 text-right bg-light border rounded-2">
                         <div class="container">
                             <div class="row justify-content-end row-cols-4 row-cols-md-2 g-3 mt-2">
-                                <h5 class="card-title">
+                                <h5 class="card-title gentium">
                                     Pronóstico del tiempo
                                     para 5 días con datos cada 3 horas por
                                     ciudad
                                 </h5>
                                 <div class="col">
-                                    <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+                                    <select class="form-select form-select-lg mb-3 titulo"
+                                        aria-label="Default select example">
                                         <option selected>Ciudades</option>
                                         <option value="Machala">Machala</option>
                                         <option value="Guayaquil">Guayaquil</option>
@@ -188,6 +227,7 @@
 
 
                             </div>
+
                             <div class="row row-cols-1 row-cols-md-1 g-3 mt-2">
                                 <div class="col">
 
@@ -196,12 +236,12 @@
                                             <table id="forecast" class="table align-middle mb-0 bg-white">
                                                 <thead class="bg-light">
                                                     <tr>
-                                                        <th>Hora</th>
-                                                        <th>Humedad [%]</th>
-                                                        <th>Velocidad del viento [m/s]</th>
-                                                        <th>Precipitación [--]</th>
-                                                        <th>Presión [hPa]</th>
-                                                        <th>Nubosidad [%]</th>
+                                                        <th class="titulo">Hora</th>
+                                                        <th class="titulo">Humedad [%]</th>
+                                                        <th class="titulo">Velocidad del viento [m/s]</th>
+                                                        <th class="titulo">Precipitación [--]</th>
+                                                        <th class="titulo">Presión [hPa]</th>
+                                                        <th class="titulo">Nubosidad [%]</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="forecastbody">
@@ -216,14 +256,14 @@
                     </section>
                     <!-- Tabla de mareas -->
                     <section class="p-4 text-right bg-light">
-                        <h4 class="mb-3">
+                        <h4 class="mb-3 gentium">
                             Mapa de monitoreo de amenaza de inundaciones bajo pronóstico de precipitaciones
                         </h4>
                         <div class="container">
                             <div class="row row-cols-1 row-cols-md-1 g-3 mt-2">
                                 <div class="col">
                                     <div class="card">
-                                        <div id="monitoreo" class="card-body">
+                                        <div id="monitoreo" class="card-body gentium">
 
                                         </div>
                                     </div>
@@ -236,7 +276,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                        <div class="text-muted">Copyright &copy; GuayaClime 2023</div>
                         <div>
                             <a href="#">Privacy Policy</a>
                             &middot;
